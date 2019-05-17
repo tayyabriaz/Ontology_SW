@@ -1,0 +1,410 @@
+@prefix : <http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5> .
+
+<http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#HasBeginning
+:HasBeginning rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :dayOfWeek .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#after
+:after rdf:type owl:ObjectProperty ;
+       owl:inverseOf :before .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#before
+:before rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#dayOfWeek
+:dayOfWeek rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :before ;
+           rdfs:domain [ rdf:type owl:Restriction ;
+                         owl:onProperty :dayOfWeek ;
+                         owl:someValuesFrom :DayOfWeek
+                       ] .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#enroll
+:enroll rdf:type owl:ObjectProperty ;
+        rdfs:domain :STUDENTS ;
+        rdfs:range :COURSE .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#hasDatetimeDescription
+:hasDatetimeDescription rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :before .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#hasDurationDescription
+:hasDurationDescription rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :before .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#hasEnd
+:hasEnd rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :before .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#inDateTime
+:inDateTime rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :before .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#inside
+:inside rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :before .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#intervalAfter
+:intervalAfter rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :before .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#intervalContains
+:intervalContains rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :before ;
+                  owl:inverseOf :intervalDuring .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#intervalDuring
+:intervalDuring rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :before ;
+                rdfs:domain :ProperInterval ;
+                rdfs:range :ProperInterval .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#intervalEquals
+:intervalEquals rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :before .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#intervalFinishedBy
+:intervalFinishedBy rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :before .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#intervalFinishes
+:intervalFinishes rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :before .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#intervalMeets
+:intervalMeets rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :before .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#intervalMetsBy
+:intervalMetsBy rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :before .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#intervalOverlappedBy
+:intervalOverlappedBy rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :before .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#intervalOverlaps
+:intervalOverlaps rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :before .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#intervalStartedBy
+:intervalStartedBy rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :before .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#intervalStarts
+:intervalStarts rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :before .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#timeZone
+:timeZone rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :before .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#unitType
+:unitType rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :before .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#day
+:day rdf:type owl:DatatypeProperty ;
+     rdfs:domain :DateTimeDescription ;
+     rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#dayOfyear
+:dayOfyear rdf:type owl:DatatypeProperty ;
+           rdfs:domain :DateTimeDescription ;
+           rdfs:range xsd:nonNegativeInteger .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#days
+:days rdf:type owl:DatatypeProperty ;
+      rdfs:domain :DateTimeDescription .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#hour
+:hour rdf:type owl:DatatypeProperty ;
+      rdfs:domain :DateTimeDescription ;
+      rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#hours
+:hours rdf:type owl:DatatypeProperty ;
+       rdfs:domain :DateTimeDescription ;
+       rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#inXSDDateTime
+:inXSDDateTime rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Instant ;
+               rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#minute
+:minute rdf:type owl:DatatypeProperty ;
+        rdfs:domain :DateTimeDescription ;
+        rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#minutes
+:minutes rdf:type owl:DatatypeProperty ;
+         rdfs:domain :DateTimeDescription ;
+         rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#month
+:month rdf:type owl:DatatypeProperty ;
+       rdfs:domain :DateTimeDescription ;
+       rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#months
+:months rdf:type owl:DatatypeProperty ;
+        rdfs:domain :DateTimeDescription ;
+        rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#second
+:second rdf:type owl:DatatypeProperty ;
+        rdfs:domain :DateTimeDescription ;
+        rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#seconds
+:seconds rdf:type owl:DatatypeProperty ;
+         rdfs:domain :DateTimeDescription ;
+         rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#week
+:week rdf:type owl:DatatypeProperty ;
+      rdfs:domain :DateTimeDescription ;
+      rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#weeks
+:weeks rdf:type owl:DatatypeProperty ;
+       rdfs:domain :DateTimeDescription ;
+       rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#xsdDateTime
+:xsdDateTime rdf:type owl:DatatypeProperty ;
+             rdfs:domain :DateTimeInterval .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#year
+:year rdf:type owl:DatatypeProperty ;
+      rdfs:domain :TemporalEntity .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#years
+:years rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#COURSE
+:COURSE rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#DateTimeDescription
+:DateTimeDescription rdf:type owl:Class ;
+                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                       owl:onProperty :unitType ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :TimeZone
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :dayOfWeek ;
+                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :DayOfWeek
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :timeZone ;
+                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :TimeZone
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :day ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :dayOfyear ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hour ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :minute ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :month ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :second ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :week ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :year ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#DateTimeInterval
+:DateTimeInterval rdf:type owl:Class ;
+                  rdfs:subClassOf :ProperInterval .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#DayOfWeek
+:DayOfWeek rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#DurationDescription
+:DurationDescription rdf:type owl:Class ;
+                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                       owl:onProperty :days ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hours ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :minutes ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :months ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :seconds ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :weeks ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :years ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#Instant
+:Instant rdf:type owl:Class ;
+         rdfs:subClassOf :TemporalEntity .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#Interval
+:Interval rdf:type owl:Class ;
+          rdfs:subClassOf :TemporalEntity .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#January
+:January rdf:type owl:Class ;
+         rdfs:subClassOf :DateTimeDescription .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#ProperInterval
+:ProperInterval rdf:type owl:Class ;
+                rdfs:subClassOf :ProperInterval .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#STUDENTS
+:STUDENTS rdf:type owl:Class ;
+          rdfs:comment "This is the student for student enrollment" .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#TemporalEntity
+:TemporalEntity rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#TermperatureUnit
+:TermperatureUnit rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#TimeZone
+:TimeZone rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#Year
+:Year rdf:type owl:Class ;
+      rdfs:subClassOf :DurationDescription .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#Danish
+:Danish rdf:type owl:NamedIndividual ,
+                 :STUDENTS .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#SemanticWeb1
+:SemanticWeb1 rdf:type owl:NamedIndividual ,
+                       :COURSE .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#SemanticWeb2
+:SemanticWeb2 rdf:type owl:NamedIndividual ,
+                       :COURSE .
+
+
+###  http://www.semanticweb.org/teetoo/ontologies/2019/4/untitled-ontology-5#Tayyab
+:Tayyab rdf:type owl:NamedIndividual ,
+                 :STUDENTS ;
+        :enroll :SemanticWeb1 .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
